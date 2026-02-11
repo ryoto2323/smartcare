@@ -6,11 +6,11 @@ import { SectionWrapper, SectionTitle, ScrollMarker, ParallaxItem, fadeUp, stagg
 // --- Hero Section (Collage & Vlog Style) ---
 export const Hero: React.FC = () => {
   const carouselPhotos = [
-    { id: 1, src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=400&auto=format&fit=crop", rotate: "rotate-2", aspect: "aspect-[3/4]", alt: "チームミーティング" },
-    { id: 2, src: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=400&auto=format&fit=crop", rotate: "-rotate-1", aspect: "aspect-square", alt: "手を取り合うケア" },
-    { id: 3, src: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?q=80&w=400&auto=format&fit=crop", rotate: "rotate-3", aspect: "aspect-[4/5]", alt: "寄り添う時間" },
-    { id: 4, src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=400&auto=format&fit=crop", rotate: "-rotate-2", aspect: "aspect-[3/4]", alt: "タブレットでの記録" },
-    { id: 5, src: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop", rotate: "rotate-1", aspect: "aspect-square", alt: "スタッフの笑顔" }
+    { id: 1, src: "https://github.com/ryoto2323/smartcare/blob/main/public/ka.png?raw=true", rotate: "rotate-2", aspect: "aspect-[3/4]", alt: "チームミーティング" },
+    { id: 2, src: "https://github.com/ryoto2323/smartcare/blob/main/public/kb.png?raw=true", rotate: "-rotate-1", aspect: "aspect-square", alt: "手を取り合うケア" },
+    { id: 3, src: "https://github.com/ryoto2323/smartcare/blob/main/public/kc.png?raw=true", rotate: "rotate-3", aspect: "aspect-[4/5]", alt: "寄り添う時間" },
+    { id: 4, src: "https://github.com/ryoto2323/smartcare/blob/main/public/kd.png?raw=true", rotate: "-rotate-2", aspect: "aspect-[3/4]", alt: "タブレットでの記録" },
+    { id: 5, src: "https://github.com/ryoto2323/smartcare/blob/main/public/ke.png?raw=true", rotate: "rotate-1", aspect: "aspect-square", alt: "スタッフの笑顔" }
   ];
 
   return (
@@ -257,9 +257,9 @@ export const RealWork: React.FC = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
          {[
-           { title: "記録はフリック入力。", desc: "紙の書類とはサヨナラ。事務作業のために残る必要はありません。", img: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=600&auto=format&fit=crop" },
-           { title: "持ち上げない介護。", desc: "最新リフト完備。「気合い」で体を壊させません。", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" },
-           { title: "インカムで秒連携。", desc: "広い施設内で大声を出して人を探す必要なし。", img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=600&auto=format&fit=crop" }
+           { title: "記録はフリック入力。", desc: "紙の書類とはサヨナラ。事務作業のために残る必要はありません。", img: "https://github.com/ryoto2323/smartcare/blob/main/public/kf.png?raw=true" },
+           { title: "持ち上げない介護。", desc: "最新リフト完備。「気合い」で体を壊させません。", img: "https://github.com/ryoto2323/smartcare/blob/main/public/kg.png?raw=true" },
+           { title: "インカムで秒連携。", desc: "広い施設内で大声を出して人を探す必要なし。", img: "https://github.com/ryoto2323/smartcare/blob/main/public/kh.png?raw=true" }
          ].map((item, i) => (
            <ParallaxItem key={i} offset={i % 2 === 0 ? 30 : -30} className="h-full">
                <motion.div 
@@ -290,21 +290,21 @@ export const Staff: React.FC = () => {
       role: "入社2年目 / 23歳",
       text: "前職は残業ばかりで推しのライブに行けなくて辞めました。今はシフト希望がほぼ通るので、遠征も余裕です。",
       tags: ["#推し活充実", "#残業なし", "#未経験"],
-      img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
+      img: "https://github.com/ryoto2323/smartcare/blob/main/public/ki.png?raw=true",
       rotation: -3
     },
     {
       role: "入社5年目 / 26歳 / リーダー",
       text: "リーダーでも定時で帰れます。給料は上がったけど、帰る時間は変わってません。メリハリつけて働けるのが最高です。",
       tags: ["#年収420万", "#ゲーム好き", "#キャリア"],
-      img: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=600&auto=format&fit=crop",
+      img: "https://github.com/ryoto2323/smartcare/blob/main/public/kj.png?raw=true",
       rotation: 2
     },
     {
       role: "入社3年目 / 34歳 / ママ",
       text: "子供の急な発熱でも、チャット一本で『お互い様！』と代わってくれる。ママさんスタッフが多いので、気兼ねなく働けています。",
       tags: ["#子育て応援", "#有給とりやすい"],
-      img: "https://images.unsplash.com/photo-1558565736-d7607593c727?q=80&w=600&auto=format&fit=crop",
+      img: "https://github.com/ryoto2323/smartcare/blob/main/public/kkk.png?raw=true",
       rotation: -1
     }
   ];
