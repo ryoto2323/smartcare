@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Care | 私らしく働く、新しい介護</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Kaisei+Decol:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Natural / Life & Warmth Palette */
+        --color-ecru: #F9F9F4;      /* Background: Warm off-white */
+        --color-charcoal: #4A4A4A;  /* Text: Soft dark gray */
+        --color-pistachio: #A8C9A3; /* Main: Muted Green */
+        --color-terracotta: #E8B4A2;/* Accent: Soft Orange/Pink */
+        --color-cream: #F2E2A6;     /* Highlight: Cream Yellow */
+        --color-paper: #FFFFFF;     /* Card background */
+      }
+      body {
+        background-color: var(--color-ecru);
+        color: var(--color-charcoal);
+        font-family: 'Zen Maru Gothic', sans-serif;
+        font-feature-settings: "palt";
+        -webkit-font-smoothing: antialiased;
+        /* Subtle texture pattern base */
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1d1c7' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      h1, h2, h3, .font-hand {
+        font-family: 'Zen Maru Gothic', sans-serif;
+      }
+      .font-accent {
+        font-family: 'Kaisei Decol', serif;
+      }
+      .font-script {
+        font-family: 'La Belle Aurore', cursive;
+      }
+      
+      /* --- 1. Texture & Atmosphere Enhancements --- */
+      
+      /* Noise Overlay for Film/Paper Look */
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.06;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Vertical Writing for Japanese Aesthetics */
+      .writing-vertical {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 0.1em;
+      }
+
+      /* Lined Paper Pattern for Chat */
+      .lined-paper {
+        background-color: #fdfdfd;
+        background-image: repeating-linear-gradient(transparent, transparent 31px, #e5e5e5 31px, #e5e5e5 32px);
+        background-attachment: local;
+      }
+
+      /* Organic Border Radius (Hand-drawn feel) */
+      .organic-border {
+        border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+      }
+
+      /* Ink Bleed Effect on Hover */
+      .hover-ink-bleed {
+        transition: text-shadow 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+      }
+      .hover-ink-bleed:hover {
+        filter: blur(0.4px);
+        transform: scale(1.02) skewX(-1deg);
+        text-shadow: 0 0 1px rgba(74, 74, 74, 0.2);
+      }
+
+      /* Jitter Animation for Markers */
+      @keyframes marker-jitter {
+        0% { transform: skewX(0deg) scaleY(1); }
+        33% { transform: skewX(-1deg) scaleY(0.95); }
+        66% { transform: skewX(0.5deg) scaleY(1.02); }
+        100% { transform: skewX(0deg) scaleY(1); }
+      }
+      .marker-jitter {
+        animation: marker-jitter 3s infinite ease-in-out;
+      }
+
+      /* SVG Filter for Wobbly Edges (Optional, can be applied to containers) */
+      .wobbly-box {
+        filter: url('#wobbly');
+      }
+      
+      /* Hide scrollbar for horizontal scroll areas but keep functionality */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <!-- SVG Filter Definition for Rough Edges -->
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="wobbly">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+      </filter>
+    </svg>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
